@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"  xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.loc.gov/MARC21/slim" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"  xmlns:dcterms="http://www.dublincore.org/specifications/dublin-core/dcmi-terms/" exclude-result-prefixes="dc">
 	<xsl:output method="xml" indent="yes"/>
-	<!-- This file is modified from the original XSL bundled with Marcedit RDFDC2MARC21slim.xsl --> -->
 	<xsl:template match="/">
 		<collection xmlns="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
 			<xsl:apply-templates />
 		</collection>
 	</xsl:template>
-	
+	<!-- This file is modified from the original XSL bundled with Marcedit RDFDC2MARC21slim.xsl -->
 	<xsl:template match="rdf:Description">
 		<record>
 			<xsl:element name="leader">
