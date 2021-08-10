@@ -1,0 +1,189 @@
+This MARC-Mukurtu mapping was documented when the Ancestral Voices/1890 Passamaquoddy Phonograph Recordings collection held at the Library of Congress American Folklife Center (AFC) was shared back with the Passamaquoddy Nation. The mapping was collaboratively developed and approved by representatives from both organizations. The mapping was used for a one-way transfer from the AFC's MARC records into the Passamaquoddy People Mukurtu site.
+
+  * https://passamaquoddypeople.com
+  * https://passamaquoddypeople.com/collection/1890-passamaquoddy-phonograph-recordings
+  * https://www.loc.gov/collections/ancestral-voices/about-this-collection
+
+The mapping consists of one entry for each Mukurtu field, with notes about which MARC field(s) map to it, any necessary modifications to the content of the MARC field(s), and specific formatting needs for Mukurtu import.
+
+Mukurtu field name
+  * MARC field and name
+  * Mapping notes
+  * Mukurtu field formatting notes
+
+
+Title
+  * 245 - Title Statement
+  * No modifications needed
+  * Single value
+
+Summary
+  * 246 - Varying Form of Title
+  * No modifications neeeded
+  * Single value; 255 character limit
+
+Media Assets
+  * No direct mapping
+  * Use atom SID; Separate multiple values with semicolons
+
+Community
+  * No direct mapping
+  * Use community NID; Separate multiple values with semicolons
+
+Protocol
+  * No direct mapping
+  * Use protocol NID; Separate multiple values with semicolons
+
+Item Sharing Settings
+  * No direct Mapping
+  * Any or All
+
+Category
+  * No direct Mapping
+  * Separate multiple values with semicolons
+
+Creator
+  * 700 - Added Entry - Personal Name
+  * No modifications needed
+  * Separate multiple values with semicolons
+
+Contributor
+  * Not used in AFC>Mukurtu records
+  * Separate multiple values with semicolons
+
+Original Date
+  * 260 - Publication, Distribution, etc. (Imprint)
+  * No modifications needed
+  * Ensure ISO (yyyy-mm-dd) formatting; Partial dates accepted; Single value
+
+Original Date Description
+  * 518 - Date/Time and Place of an Event Note
+  * No modifications needed
+  * Single value; 255 character limit
+
+Cultural Narrative
+  * Not used in AFC>Mukurtu records
+  * Rich text (HTML supported); Single value; No character limit
+
+Traditional Knowledge
+  * Not used in AFC>Mukurtu records
+  * Rich text (HTML supported); Single value; No character limit
+
+Description
+  * 520 - Summary, etc. (Abstract); 500 - General Note (Engineer note); 544 - Location of Other Archival Materials Note; 546 - Language Note
+  * Concatenate fields; Manual cleanup done as needed; May need to assess these and other unmapped notes fields on a record by record basis
+  * Rich text (HTML supported); Single value; No character limit
+
+Keywords
+  * 655 - Index Term - Genre/Form
+  * Removed subject heading notation
+  * Separate multiple values with semicolons
+
+Publisher
+  * Not used in AFC>Mukurtu records
+  * Separate multiple values with semicolons
+
+Rights
+  * 540 - Terms Governing Use and Reproduction Note
+  * 540 field needs to be divided
+  * Single value
+
+Traditional Knowledge Labels
+  * 540 - Terms Governing Use and Reproduction Note
+  * 540 field needs to be divided; Sensitive records may use a different set of TK labels
+  * Must use URL formatting; Up to 4 TK Labels per record; Separate multiple values with semicolons
+    * http://localcontexts.org/tk/a/1.0
+    * http://localcontexts.org/tk/s/1.0
+    * http://localcontexts.org/tk/f/1.0
+    * http://localcontexts.org/tk/o/1.0
+    * http://localcontexts.org/tk/c/1.0
+    * http://localcontexts.org/tk/nc/1.0
+    * http://localcontexts.org/tk/mr/1.0
+    * http://localcontexts.org/tk/mg/1.0
+    * http://localcontexts.org/tk/mc/1.0
+    * http://localcontexts.org/tk/wr/1.0
+    * http://localcontexts.org/tk/wg/1.0
+    * http://localcontexts.org/tk/ss/1.0
+    * http://localcontexts.org/tk/co/1.0
+    * http://localcontexts.org/tk/cv/1.0
+    * http://localcontexts.org/tk/cs/1.0
+    * http://localcontexts.org/tk/v/1.0
+    * http://localcontexts.org/tk/nv/1.0
+
+Licensing Options
+  * Not used in AFC>Mukurtu records
+  * Must use URL formatting
+  * Single value
+    * http://creativecommons.org/licenses/by/4.0
+    * http://creativecommons.org/licenses/by-nc/4.0
+    * http://creativecommons.org/licenses/by-sa/4.0
+    * http://creativecommons.org/licenses/by-nc-sa/4.0
+    * http://creativecommons.org/licenses/by-nd/4.0
+    * http://creativecommons.org/licenses/by-nc-nd/4.0
+
+Format
+  * 300 - Physical Description
+  * No modifications needed
+  * Separate multiple values with semicolons
+
+Type
+  * Extracted from 245
+  * Separate multiple values with semicolons
+
+Identifier
+  * 90 - Local Call Numbers
+  * No modifications needed
+  * Single value
+
+Language
+  * 546 - Language Note
+  * Extract language names from 546 field (included in full in Description)
+  * Separate multiple values with semicolons
+
+Source
+  * 524 - Preferred Citation of Described Materials Note
+  * Concatenate with LCCN Permalink
+  * Single value
+
+Subject
+  * 650 - Subject Added Entry - Topical Term
+  * No modifications needed
+  * Separate multiple values with semicolons
+
+People
+  * Not used in AFC>Mukurtu records
+  * Separate multiple values with semicolons
+
+Transcription
+  * Not used in AFC>Mukurtu records
+  * Single value; No character limit
+
+Location Description
+  * 651 - Subject Added Entry - Geographic Name
+  * No modifications needed
+  * Rich text (HTML supported); Single value; No character limit
+
+Location
+  * Not used in AFC>Mukurtu records
+  * Geocode (lat/long point)
+
+External Links
+  * LCCN Permalink
+  * Must be formatted as URL||Title||Attributes; only URL is required; Separate multiple values with semicolons
+
+Collections
+  * No direct mapping
+  * Use collection NIDs; Separate multiple values with semicolons
+
+Related Content
+  * Not used in AFC>Mukurtu records;
+  * Use digital heritage and dictionary word NIDs; Separate multiple values with semicolons
+
+guid
+  * No direct mapping
+  * Generate guids to ensure they are unique (using eg: https://guidgenerator.com/); Only needed when batch importing new records
+  * Single value
+
+Username
+  * No direct mapping
+  * Single value; Must be a valid username
