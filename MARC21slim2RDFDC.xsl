@@ -2,16 +2,18 @@
 <xsl:stylesheet version="1.0" xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" exclude-result-prefixes="marc">
 	<xsl:import href="MARC21slimUtils.xsl"/>
 	<xsl:output method="xml" indent="yes"/>
-	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
-		xmlns:dc="http://purl.org/dc/elements/1.1/" 
-		xmlns:dcterms="http://www.dublincore.org/specifications/dublin-core/dcmi-terms/">
+	
 	<!--
 	Suppressed duplicate 520,521.  fixed 752 subfield list, suppressed 856q, added 662.  2008-01-22 ntra
 	Fixed 500 field 2006-12-11 ntra
 	Added ISBN and deleted attributes 6/04 jer-->
 	
 	<xsl:template match="/">
+		<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+			xmlns:dc="http://purl.org/dc/elements/1.1/" 
+			xmlns:dcterms="http://www.dublincore.org/specifications/dublin-core/dcmi-terms/">
 			<xsl:apply-templates/>
+		</rdf:RDF>
 	</xsl:template>
 
 	<xsl:template match="marc:record">
@@ -215,7 +217,7 @@
 			</xsl:for-each>
 		</rdf:Description>
 	</xsl:template>
-	</rdf:RDF>	
+		
 </xsl:stylesheet>
 <!-- Stylus Studio meta-information - (c) 2004-2005. Progress Software Corporation. All rights reserved.
 <metaInformation>
