@@ -31,7 +31,7 @@
 				</dc:title>
 			</xsl:for-each>
 
-	
+	<!-- only including subfield a on  700 and 710 !-->
 	  	<xsl:for-each select="marc:datafield[@tag=100]|marc:datafield[@tag=110]|marc:datafield[@tag=111]|marc:datafield[@tag=700]/marc:subfield[@code='a']|marc:datafield[@tag=710]/marc:subfield[@code='a']|marc:datafield[@tag=711]|marc:datafield[@tag=720]">
 				<dc:creator>
 					<xsl:value-of select="."/>
