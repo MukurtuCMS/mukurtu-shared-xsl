@@ -32,7 +32,7 @@
 			</xsl:for-each>
 
 	
-			<xsl:for-each select="marc:datafield[@tag=100]|marc:datafield[@tag=110]|marc:datafield[@tag=111]|marc:datafield[@tag=700]|marc:datafield[@tag=710]|marc:datafield[@tag=711]|marc:datafield[@tag=720]">
+	  	<xsl:for-each select="marc:datafield[@tag=100]|marc:datafield[@tag=110]|marc:datafield[@tag=111]|marc:datafield[@tag=700]/marc:subfield[@code='a']|marc:datafield[@tag=710]/marc:subfield[@code='a']|marc:datafield[@tag=711]|marc:datafield[@tag=720]">
 				<dc:creator>
 					<xsl:value-of select="."/>
 				</dc:creator>
@@ -64,13 +64,13 @@
 					<xsl:when test="$leader6='p'">mixed material</xsl:when>
 				</xsl:choose>
 			</dc:type>
-
-			<xsl:for-each select="marc:datafield[@tag=655]">
+<!-- removing subfield 2 from type and will also remove all of these alot of redundacy with 650 
+	  	<xsl:for-each select="marc:datafield[@tag=655]/marc:subfield[@code='a']">
 				<dc:type>
 					<xsl:value-of select="."/>
 				</dc:type>
 			</xsl:for-each>
-
+!-->
 			<xsl:for-each select="marc:datafield[@tag=260]">
 				<dc:publisher>
 					<xsl:call-template name="subfieldSelect">
@@ -190,12 +190,19 @@
 					</xsl:call-template>
 				</dc:relation>	
 			</xsl:for-each>
-
-			<xsl:for-each select="marc:datafield[@tag=856]">
-				<dc:identifier>
-					<xsl:value-of select="marc:subfield[@code='u']"/>
-				</dc:identifier>
-			</xsl:for-each>
+	  	
+	  	<xsl:for-each select="marc:datafield[@tag=90]">
+	  	<dc:identifier>
+	  		<xsl:value-of select="marc:subfield[@code='a']"/>
+	  	</dc:identifier>
+	  	</xsl:for-each>
+	
+	  	<xsl:for-each select="marc:datafield[@tag=856]">
+	  		<dc:identifier>
+	  			<xsl:value-of select="marc:subfield[@code='u']"/>
+	  		</dc:identifier>
+	  	</xsl:for-each>
+			
 			
 			<xsl:for-each select="marc:datafield[@tag=020]">
 			<dc:identifier>
