@@ -21,8 +21,10 @@
 		<xsl:variable name="leader6" select="substring($leader,7,1)"/>
 		<xsl:variable name="leader7" select="substring($leader,8,1)"/>
 		<xsl:variable name="controlField008" select="marc:controlfield[@tag=008]"/>
+		<!-- testing out grabbing the 856 and throwing it into the about using an XSL variable,  this works but may only be feasible with only one 856 per record. Currently only grabs the first URL in the list !-->
+		<xsl:variable name="URL" select="marc:datafield[@tag=856]/marc:subfield[@code='u']"/>
 
-	  <rdf:Description>
+	  <rdf:Description rdf:about="{$URL}">
 			<xsl:for-each select="marc:datafield[@tag=245]">
 				<dc:title>
 					<xsl:call-template name="subfieldSelect">
